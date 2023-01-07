@@ -4,15 +4,15 @@ namespace SalvatoreCervone\RelationsJoins;
 
 class RelationsJoinsClass
 {
-      static function init(Model $model, array $relation)
+    public static function init(Model $model, array $relation)
     {
-
         $model->load($relation);
         $mapModelType = self::getDataRelations($model);
+
         return $mapModelType;
     }
 
-    static function getDataRelations($model)
+    public static function getDataRelations($model)
     {
         $modelRelation = null;
         $relations = $model->getRelations();
@@ -20,16 +20,15 @@ class RelationsJoinsClass
             $type = get_class($model->{$key}());
             $data = [];
             if ($type == HasMany::class) {
-
                 $data = [
                     'nome' => $key,
                     'classe' => get_class($model->{$key}()->getRelated()),
                     'tipo' => $type,
                     'tablerelation' => $model->{$key}()->getRelated()->getTable(),
                     'foreignkey' => $model->{$key}()->getQualifiedForeignKeyName(),
-                    'parentkey' => $model->{$key}()->getQualifiedParentKeyName()
+                    'parentkey' => $model->{$key}()->getQualifiedParentKeyName(),
                 ];
-                $data['join'] = 'inner join ' . $data['tablerelation'] . ' on ' . $data['foreignkey'] . '=' . $data['parentkey'];
+                $data['join'] = 'inner join '.$data['tablerelation'].' on '.$data['foreignkey'].'='.$data['parentkey'];
                 $modelRelation[] = $data;
             } elseif ($type == BelongsToMany::class) {
                 $data = [
@@ -43,12 +42,13 @@ class RelationsJoinsClass
                     'relationkey' => $model->{$key}()->getQualifiedRelatedKeyName(),
                     'relationforeignkey' => $model->{$key}()->getQualifiedForeignPivotKeyName(),
                 ];
-                $data['join'] = 'inner join ' . $data['tablepivot'] . ' on ' . $data['parentforeignkey'] . '=' . $data['parentkey']  .
-                    ' inner join ' . $data['tablerelation'] . ' on ' . $data['relationkey'] . '=' . $data['relationforeignkey'];
+                $data['join'] = 'inner join '.$data['tablepivot'].' on '.$data['parentforeignkey'].'='.$data['parentkey'].
+                    ' inner join '.$data['tablerelation'].' on '.$data['relationkey'].'='.$data['relationforeignkey'];
 
                 $modelRelation[] = $data;
             }
         }
+
         return $modelRelation;
     }
 }
