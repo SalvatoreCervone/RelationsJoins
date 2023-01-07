@@ -3,8 +3,8 @@
 namespace SalvatoreCervone\RelationsJoins;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class RelationsJoinsClass
 {
@@ -32,7 +32,7 @@ class RelationsJoinsClass
                     'foreignkey' => $model->{$key}()->getQualifiedForeignKeyName(),
                     'parentkey' => $model->{$key}()->getQualifiedParentKeyName(),
                 ];
-                $data['join'] = 'inner join ' . $data['tablerelation'] . ' on ' . $data['foreignkey'] . '=' . $data['parentkey'];
+                $data['join'] = 'inner join '.$data['tablerelation'].' on '.$data['foreignkey'].'='.$data['parentkey'];
                 $modelRelation[] = $data;
             } elseif ($type == BelongsToMany::class) {
                 $data = [
@@ -46,8 +46,8 @@ class RelationsJoinsClass
                     'relationkey' => $model->{$key}()->getQualifiedRelatedKeyName(),
                     'relationforeignkey' => $model->{$key}()->getQualifiedForeignPivotKeyName(),
                 ];
-                $data['join'] = 'inner join ' . $data['tablepivot'] . ' on ' . $data['parentforeignkey'] . '=' . $data['parentkey'] .
-                    ' inner join ' . $data['tablerelation'] . ' on ' . $data['relationkey'] . '=' . $data['relationforeignkey'];
+                $data['join'] = 'inner join '.$data['tablepivot'].' on '.$data['parentforeignkey'].'='.$data['parentkey'].
+                    ' inner join '.$data['tablerelation'].' on '.$data['relationkey'].'='.$data['relationforeignkey'];
 
                 $modelRelation[] = $data;
             }
