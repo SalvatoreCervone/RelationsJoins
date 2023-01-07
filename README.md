@@ -1,8 +1,12 @@
-# This is my package relationsjoins
+# This is Relations to join retrive data
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/salvatorecervone/relationsjoins.svg?style=flat-square)](https://packagist.org/packages/salvatorecervone/relationsjoins)
 [![Tests](https://img.shields.io/github/actions/workflow/status/salvatorecervone/relationsjoins/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/salvatorecervone/relationsjoins/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/salvatorecervone/relationsjoins.svg?style=flat-square)](https://packagist.org/packages/salvatorecervone/relationsjoins)
+
+## Whats?
+
+This package help you to convert relationship eloquent to join relation 
 
 ## Installation
 
