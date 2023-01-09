@@ -22,10 +22,10 @@ For start you setting type of your relation for all relation do you use
 ex.
 
 ```php
- function role(): HasMany
-    {
-        return $this->hasMany(Role::class);
-    }
+function role(): HasMany
+{
+    return $this->hasMany(Role::class);
+}
 ```
 
 after setting relation you use single row of code with 2 parameters:
@@ -33,7 +33,9 @@ after setting relation you use single row of code with 2 parameters:
 - name of relationship in array
 
 ```php
-$result = (RelationsJoinsClass::init(new User(), ['role']));
+$user = new User;
+$user->load(['role']);
+$result = (RelationsJoinsClass::init($user);
 ```
 
 the result is a array with all information of all relations usage.
