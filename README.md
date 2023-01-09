@@ -27,6 +27,7 @@ ex.
         return $this->hasMany(Role::class);
     }
 ```
+and this for each other relation
 
 ```php
 $result = (RelationsJoinsClass::init(new User(), ['role']));
@@ -34,8 +35,7 @@ $result = (RelationsJoinsClass::init(new User(), ['role']));
 
 ## Credits
 
-- ['salvatore'](https://github.com/SalvatoreCervone)
-- [All Contributors](../../contributors)
+- [salvatore](https://github.com/SalvatoreCervone)
 
 ## License
 
