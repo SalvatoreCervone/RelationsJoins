@@ -10,7 +10,6 @@ class RelationsJoinsClass
 {
     public static function init(Model $model)
     {
-       
         $mapModelType = self::getDataRelations($model);
 
         return $mapModelType;
