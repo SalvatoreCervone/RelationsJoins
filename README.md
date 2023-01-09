@@ -31,7 +31,7 @@ function role(): HasMany
 Use Triat in any models do you return joins with 
 
 ```php
-Use RelationsJoins;
+Use ReturnJoin;
 ```
 
 and after you call one row of code
