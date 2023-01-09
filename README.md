@@ -33,9 +33,7 @@ after setting relation you use single row of code with 2 parameters:
 - name of relationship in array
 
 ```php
-$user = new User;
-$user->load(['role']);
-$result = (RelationsJoinsClass::init($user);
+$joins = app('App\Models\User')->load['role']->returnjoin(); 
 ```
 
 the result is a array with all information of all relations usage.
