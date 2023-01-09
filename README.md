@@ -33,6 +33,9 @@ and this for each other relation
 $result = (RelationsJoinsClass::init(new User(), ['role']));
 ```
 
+the result is a array with all information of all relations usage.
+The array have all id and name table for real relation and have the inner join string  for usage in query builder
+
 ## Credits
 
 - [salvatore](https://github.com/SalvatoreCervone)
