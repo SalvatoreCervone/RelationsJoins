@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class RelationsJoinsClass
 {
-    public static function init(Model $model, array $relation)
+    public static function init(Model $model)
     {
-        $model->load($relation);
+       
         $mapModelType = self::getDataRelations($model);
 
         return $mapModelType;
