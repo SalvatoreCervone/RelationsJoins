@@ -1,6 +1,6 @@
 <?php
 
-namespace SalvatoreCervone\ReturnJoin;
+namespace SalvatoreCervone\RelationsJoins;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
