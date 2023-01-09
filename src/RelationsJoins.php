@@ -23,7 +23,7 @@ trait ReturnJoin
                     'foreignkey' => $this->{$key}()->getQualifiedForeignKeyName(),
                     'parentkey' => $this->{$key}()->getQualifiedParentKeyName(),
                 ];
-                $data['join'] = 'inner join ' . $data['tablerelation'] . ' on ' . $data['foreignkey'] . '=' . $data['parentkey'];
+                $data['join'] = 'inner join '.$data['tablerelation'].' on '.$data['foreignkey'].'='.$data['parentkey'];
                 $modelRelation[] = $data;
             } elseif ($type == BelongsToMany::class) {
                 $data = [
@@ -37,8 +37,8 @@ trait ReturnJoin
                     'relationkey' => $this->{$key}()->getQualifiedRelatedKeyName(),
                     'relationforeignkey' => $this->{$key}()->getQualifiedForeignPivotKeyName(),
                 ];
-                $data['join'] = 'inner join ' . $data['tablepivot'] . ' on ' . $data['parentforeignkey'] . '=' . $data['parentkey'] .
-                    ' inner join ' . $data['tablerelation'] . ' on ' . $data['relationkey'] . '=' . $data['relationforeignkey'];
+                $data['join'] = 'inner join '.$data['tablepivot'].' on '.$data['parentforeignkey'].'='.$data['parentkey'].
+                    ' inner join '.$data['tablerelation'].' on '.$data['relationkey'].'='.$data['relationforeignkey'];
 
                 $modelRelation[] = $data;
             }
