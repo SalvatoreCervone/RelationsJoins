@@ -18,7 +18,7 @@ composer require salvatorecervone/relationsjoins
 
 ## Usage
 
-For start you setting type of your relation
+For start you setting type of your relation for all relation do you use
 ex.
 
 ```php
@@ -27,7 +27,10 @@ ex.
         return $this->hasMany(Role::class);
     }
 ```
-and this for each other relation
+
+after setting relation you use single row of code with 2 parameters:
+- Base model for start
+- name of relationship in array
 
 ```php
 $result = (RelationsJoinsClass::init(new User(), ['role']));
