@@ -18,6 +18,16 @@ composer require salvatorecervone/relationsjoins
 
 ## Usage
 
+For start you setting type of your relation
+ex.
+
+```php
+ function role(): HasMany
+    {
+        return $this->hasMany(Role::class);
+    }
+```
+
 ```php
 $result = (RelationsJoinsClass::init(new User(), ['role']));
 ```
