@@ -28,9 +28,13 @@ function role(): HasMany
 }
 ```
 
-after setting relation you use single row of code with 2 parameters:
-- Base model for start
-- name of relationship in array
+Use Triat in any models do you return joins with 
+
+```php
+Use RelationsJoins;
+```
+
+and after you call one row of code
 
 ```php
 $joins = app('App\Models\User')->load['role']->returnjoin(); 

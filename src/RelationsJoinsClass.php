@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 trait ReturnJoin
 {
 
-    public static function getDataRelations()
+    public function scopeReturnjoin()
     {
         $modelRelation = null;
         $relations = $this->getRelations();
