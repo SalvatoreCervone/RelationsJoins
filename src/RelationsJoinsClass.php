@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait ReturnJoin
 {
-
     public static function getDataRelations()
     {
         $modelRelation = null;
